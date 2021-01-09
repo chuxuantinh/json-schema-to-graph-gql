@@ -1,0 +1,56 @@
+{
+  "name": "@lifeomic/json-schema-to-graphql-types",
+  "version": "1.4.2",
+  "description": "A utility to convert JSON Schema types into GraphQL types",
+  "bin": {
+    "convert-json-schemas-to-graphql-types": "bin/convert-json-schemas-to-graphql-types.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "nyc ava",
+    "posttest": "yarn lint",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "main": "./src/index.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "graphql",
+    "json-schema",
+    "converter"
+  ],
+  "author": "LifeOmic <development@lifeomic.com>",
+  "license": "MIT",
+  "dependencies": {
+    "camelcase": "^5.0.0",
+    "escodegen": "^1.9.1",
+    "fs-extra": "^8.0.0",
+    "graphql": "^14.0.2",
+    "lodash": "^4.17.5",
+    "uppercamelcase": "^3.0.0",
+    "yargs": "^14.0.0"
+  },
+  "devDependencies": {
+    "@lifeomic/eslint-plugin-node": "^2.0.1",
+    "ajv": "^6.2.0",
+    "ava": "^2.0.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^6.0.0",
+    "nyc": "^15.0.0",
+    "tmp-promise": "^1.0.4"
+  },
+  "eslintConfig": {
+    "extends": "plugin:@lifeomic/node/recommended"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
